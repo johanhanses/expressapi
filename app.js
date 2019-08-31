@@ -7,6 +7,9 @@ const bodyParser = require("body-parser");
 
 const index      = require('./routes/index');
 const hello      = require('./routes/hello');
+const reports    = require("./routes/reports")
+const register   = require("./routes/register");
+const login      = require("./routes/login");
 
 const port = 1337;
 
@@ -40,6 +43,10 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/hello', hello);
+app.use('/reports', reports);
+app.use('/register', register);
+app.use('/login', login);
+
 
 // Add routes for 404 and error handling
 // Catch 404 and forward to error handler
