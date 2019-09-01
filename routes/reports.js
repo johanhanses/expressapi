@@ -5,7 +5,7 @@ const db    = require("../db/database.js");
 router.get("/week/:id", async (req, res, next) => {
     const id = req.params.id;
     const week = await getReport(id);
-    const data = { week }; 
+    const data = {week}; 
 
     res.status(200).json(data);
 });
@@ -17,7 +17,7 @@ async function getReport(week) {
             [ week ], (err, data) => {
             if(err) reject("Read error: " + err.message)
             else {
-                resolve(data[0])
+                resolve(data)
             }
         })
     });
