@@ -7,9 +7,9 @@ const db    = require("../db/database.js");
 
 router.get("/", (req, res, next) => {
     const data = {
-        data: {
-            msg: `Hello me, this the / -route and it's /n the starting point for this application`
-        }
+        data: [
+            { msg: `Hello me, this the / -route and it's /n the starting point for this application` }
+        ]
     };
     res.json(data);
 });
