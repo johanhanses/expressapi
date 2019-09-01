@@ -5,14 +5,44 @@ const db    = require("../db/database.js");
 
 
 
-router.get("/", (req, res, next) => {
-    const data = {
-        data: [
-            { msg: `Hello me, this the / -route and it's /n the starting point for this application` }
-        ]
-    };
-    res.json(data);
+// router.get("/", (req, res, next) => {
+//     const data = {
+//         data: {
+//             msg: `Hello me, this the / -route and it's /n the starting point for this application`
+//         }
+//     };
+//     res.json(data);
+// });
+
+router.get("/", async (req, res, next) => {
+    const home = await getReport();
+    const data = {home}; 
+
+    res.status(200).json(data);
 });
+
+async function getReport() {
+    return new Promise((resolve, reject) => {
+        db.all(
+            "SELECT * FROM home",
+            (err, data) => {
+            if(err) reject("Read error: " + err.message)
+            else {
+                resolve(data)
+            }
+        })
+    });
+};
+
+
+
+
+
+
+
+
+
+
 
 router.post("/reports", checkToken, (req, res) => {
     const { week, writer, report } = req.body;

@@ -2,8 +2,15 @@
 -- by pjh
 
 -- DROP TABLES
+DROP TABLE IF EXISTS home;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS reports;
+
+CREATE TABLE IF NOT EXISTS home (
+    content VARCHAR(900)
+);
+
+
 
 CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL,
@@ -39,4 +46,10 @@ VALUES
         "2",
         "pjh",
         "Test av vecka 2"
+    );
+
+INSERT INTO home (`content`)
+VALUES
+    (
+        "Hello me, this is the starting point for this application"
     );
