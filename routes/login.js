@@ -31,7 +31,9 @@ router.post('/', async function(req, res, next) {
         const token = jwt.sign(payload, secret, { expiresIn: '1h'});
 		console.log('​token', token)
         // return token;
-        return res.status(200).json({'email': email, 'token': token});
+        // return res.status(200).json({'email': email, 'token': token});
+        return res.status(200).send(token);
+
     } else {
         console.log("else");
         return res.status(403).json({'err': 401});
