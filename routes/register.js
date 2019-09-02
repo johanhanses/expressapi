@@ -13,8 +13,10 @@ router.post('/', async (req, res, next) => {
         [ email, hashedPassword, name, birthdate ], err => {
             console.log("IN DB");
             if (err) {
+                res.send("something sket sig");
                 console.log('​err', err)
             } else {
+                res.send("user created");
                 console.log("user created");
             }
     });
