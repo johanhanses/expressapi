@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- CREATE TABLE reports
 CREATE TABLE IF NOT EXISTS reports (
-    id INTEGER,
+    id INTEGER, 
     week CHAR(6) NOT NULL,
     writer VARCHAR(255) NOT NULL,
     report VARCHAR(5000) NOT NULL,

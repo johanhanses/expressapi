@@ -53,6 +53,29 @@ router.post("/reports", checkToken, (req, res) => {
     // return res;
 });
 
+router.put("/reports/:id", checkToken, (req, res) => {
+    const id = req.params.id;
+    const { week, writer, report } = req.body;
+    // res.status(201);
+    // const week = { week: "week" + week, writer, report };
+    db.run(
+        `UPDATE reports SET 
+            week = ?,
+            writer = ?,
+            report = ?
+        WHERE id = ?
+        `,
+        [week, writer, report, id], err => {
+        if (err) {
+            return console.log('​err', err)
+        } else {
+            return console.log("report updated");
+        }
+    });
+    return res.status(201);
+    // return res;
+});
+
 function checkToken(req, res, next) {
     const token = req.headers['x-access-token'] || req.headers['authorization'];
 	console.log('TCL: checkToken -> token', token)
