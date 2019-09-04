@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 
 const index      = require('./routes/index');
 const hello      = require('./routes/hello');
-const reports    = require("./routes/reports")
+const reports    = require("./routes/reports");
 const register   = require("./routes/register");
 const login      = require("./routes/login");
 
@@ -18,14 +18,14 @@ app.use(cors());
 // for parsing application/json
 app.use(
     bodyParser.json()
-    );
+);
 
 // for parsing application/x-www-form-urlencoded
 app.use(
     bodyParser.urlencoded(
         { extended: true }
-        )
-    );
+    )
+);
 
 // don't show the log when it is test
 if (process.env.NODE_ENV !== 'test') {
@@ -53,6 +53,7 @@ app.use('/login', login);
 // Put this last
 app.use((req, res, next) => {
     var err = new Error("Not Found");
+
     err.status = 404;
     next(err);
 });
@@ -74,4 +75,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start up server
-app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+const server = app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+
+module.exports = server;
