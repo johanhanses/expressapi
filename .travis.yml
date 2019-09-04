@@ -11,6 +11,11 @@ sudo: false
 git:
     submodules: false
 
+
+matrix:
+    allow_failures:
+        - node: "6"
+
 before_script:
     - npm install
 
