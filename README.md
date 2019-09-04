@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.org/johanhanses/expressapi.svg?branch=master)](https://travis-ci.org/johanhanses/expressapi)
 
-<<<<<<< HEAD
-=======
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/johanhanses/expressapi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/johanhanses/expressapi/?branch=master)
 
->>>>>>> 38da9e1f00eba0e0e6f361ac9d39388218d78160
+[![Code Coverage](https://scrutinizer-ci.com/g/johanhanses/expressapi/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/johanhanses/expressapi/?branch=master)
+
+
 # expressapi
