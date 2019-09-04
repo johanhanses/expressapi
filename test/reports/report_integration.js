@@ -7,7 +7,7 @@ const server = require('../../app.js');
 chai.should();
 
 chai.use(chaiHttp);
-
+/* eslint-disable */
 describe('Reports', () => {
     describe('GET /reports/week/1', () => {
         it('200 HAPPY PATH', (done) => {
