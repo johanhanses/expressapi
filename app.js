@@ -11,7 +11,7 @@ const reports    = require("./routes/reports");
 const register   = require("./routes/register");
 const login      = require("./routes/login");
 
-const port = 1337;
+const port = 8333;
 
 app.use(cors());
 
