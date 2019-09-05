@@ -1,13 +1,13 @@
 build:
-  dependencies:
+dependencies:
     before:
-      -
-      command: "mkdir build"
-  nodes:
+        -
+            command: "mkdir build"
+nodes:
     coverage:
-      tests:
+    tests:
         override:
-          - command: "npm test"
+        - command: "npm test"
             coverage:
-              file: "build/coverage.clover"
-              format: clover
+            file: "build/coverage.clover"
+            format: clover
