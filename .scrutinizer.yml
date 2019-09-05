@@ -5,9 +5,9 @@ dependencies:
             command: "mkdir build"
 nodes:
     coverage:
-    tests:
-        override:
-        - command: "npm test"
-            coverage:
-            file: "build/coverage.clover"
-            format: clover
+        tests:
+            override:
+            - command: "npm test"
+                coverage:
+                file: "build/coverage.clover"
+                format: clover
