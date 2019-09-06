@@ -9,5 +9,5 @@ nodes:
             override:
             - command: "npm test"
                 coverage:
-                file: "build/coverage.clover"
-                format: clover
+                file: "build/coverage.xml"
+                format: xml
