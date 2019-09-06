@@ -1,13 +1,15 @@
+filter:
+    excluded_paths: [node_modules/*, build/*, lib/*]
+
 build:
-dependencies:
-    before:
-        -
-            command: "mkdir build"
-nodes:
-    coverage:
-        tests:
-            override:
-            - command: "npm test"
+    dependencies:
+        before:
+            - npm install   # or add it as part of your package.json
+
+    tests:
+        override:
+            -
+                command: 'npm test'
                 coverage:
-                    file: "build/coverage.xml"
-                        format: xml
+                    file: 'coverage/clover.xml'
+                    format: 'clover'
