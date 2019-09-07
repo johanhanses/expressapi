@@ -10,6 +10,7 @@ const hello      = require('./routes/hello');
 const reports    = require("./routes/reports");
 const register   = require("./routes/register");
 const login      = require("./routes/login");
+const allWeeks   = require("./routes/allWeeks");
 
 const port = 8333;
 
@@ -46,6 +47,8 @@ app.use('/hello', hello);
 app.use('/reports', reports);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/allWeeks', allWeeks);
+
 
 
 // Add routes for 404 and error handling
