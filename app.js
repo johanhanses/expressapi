@@ -47,7 +47,7 @@ app.use('/hello', hello);
 app.use('/reports', reports);
 app.use('/register', register);
 app.use('/login', login);
-app.use('/allWeeks', allWeeks);
+app.use('/allweeks', allWeeks);
 
 
 
