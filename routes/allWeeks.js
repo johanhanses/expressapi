@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const db    = require("../db/database.js");
+
 
 router.get("/", async (req, res) => {
     // const id = req.params.id;
