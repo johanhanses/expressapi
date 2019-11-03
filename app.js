@@ -12,7 +12,7 @@ const register   = require("./routes/register");
 const login      = require("./routes/login");
 const allWeeks   = require("./routes/allWeeks");
 
-const port = 8333;
+const port = 5000;
 
 app.use(cors());
 
@@ -53,7 +53,6 @@ app.use('/allweeks', allWeeks);
 
 // Add routes for 404 and error handling
 // Catch 404 and forward to error handler
-// Put this last
 app.use((req, res, next) => {
     var err = new Error("Not Found");
 
